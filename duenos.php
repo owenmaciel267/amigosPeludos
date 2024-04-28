@@ -46,8 +46,8 @@
                    // Validar la entrada
                    if (!empty($ID) && !empty($nuevoNombre) && !empty($nuevoApellido) && !empty($nuevoEmail)  && !empty($nuevoTelefono)  && !empty($nuevoDireccion)  ) {
                     // Crear una declaración preparada
-                    $stmt = $conexion->prepare("UPDATE due SET nombre=?, telefono=?, email=?, mensaje=? WHERE ID=?");
-                    $stmt->bind_param("sssisi", $nuevoNombre, $nuevoApellido, $nuevoEmail,$nuevoTelefono, $nuevoDireccion, $ID);
+                    $stmt = $conexion->prepare("UPDATE due SET nombre=?, apellido=? ,telefono=?, email=?, direccion=? WHERE ID=?");
+                    $stmt->bind_param("sssisi", $nuevoNombre, $nuevoApellido, $nuevoEmail, $nuevoTelefono, $nuevoDireccion, $ID);
 
                     // Ejecutar la declaración preparada
                     if ($stmt->execute()) {
@@ -161,8 +161,8 @@
 
                     </div>
                     <div class="col">
-                        <label for="nuevo-Telefono" class="form-label text-light bg-dark">numero Apellido:</label>
-						<input type="number" name="nuevo-Telefono" id="nuevo-Telefono" class="form-control" value="<?php echo  $nuevoApellido; ?>"   required readonly >
+                        <label for="nuevo-Apellido" class="form-label text-light bg-dark">numero Apellido:</label>
+						<input type="text" name="nuevo-Apellido" id="nuevo-Apellido" class="form-control" value="<?php echo  $nuevoApellido; ?>"   required readonly >
 
                     </div>
                     <div class="col">
