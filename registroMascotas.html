@@ -12,13 +12,16 @@
 <!-- ___________________________________________________________ -->
  <!-- form -->
     <section class="registroMascota" id="registroMascota">
-        <form action="duenos.php" method="POST" >
+        <form action="duenos.php" method="POST" enctype="multipart/form-data">
             <h2>
                 Registra tu Mascotas
             </h2>
             <div class="input-form">
                 <label for="tipo" class="label">Tipo</label>
-                <input type="select" class="input" name="tipo" id="tipo" placeholder="tipo">
+                <select id="tipo" name="tipo" class="input">
+                    <option value="perro" class="input">perro</option>
+                    <option value="gato" class="input">gato</option>
+                </select>
 
                 <label for="nombre" class="label"> Nombre</label>
                 <input type="texto" class="input" name="Nombre" id="Nombre" placeholder="Nombre">
