@@ -1,16 +1,49 @@
-body{
-    /* background-color: black;
-    color: aliceblue; */
 
-    font-family: Arial, Helvetica, sans-serif;
-    /* height: 100vh; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.logo a {
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fcfcfc;
 }
+.navbar {
+    background-color: #000000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+.nav-items ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-items ul li {
+    margin-right: 20px;
+}
+
+.nav-items ul li a {
+    text-decoration: none;
+    color: #fefefe;
+    transition: color 0.3s ease;
+}
+
+.nav-items ul li a:hover {
+    color: #2bf267;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
 
 .registroMascota{
     margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 form{
@@ -19,7 +52,7 @@ form{
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     border-radius: 20px;
     text-align: center;
-    width: 250px;
+    width: 400px;
     margin-top: 100px;
 }
 .input-form{
@@ -69,7 +102,7 @@ input::placeholder, textarea::placeholder{
     text-decoration: none;
 }
 
-.btn{
+.btnForm{
     font-size: 16px;
     color: #000000;
     border: 0;
@@ -78,12 +111,42 @@ input::placeholder, textarea::placeholder{
     cursor: pointer;
 }
 
-.btn:hover{
+.btnForm:hover{
     background-color: #50e04b;
 }
 
 
 @media(max-width:991px){
+    body{
+        padding: 0%;
+    }
+    .container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-items {
+        display: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-items.active {
+        display: block;
+    }
+
+    .nav-items ul {
+        flex-direction: column;
+    }
+
+    .nav-items ul li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
     body{
         padding: 30px;
     }

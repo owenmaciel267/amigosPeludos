@@ -1,4 +1,9 @@
-
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    text-decoration: none;
+}
 /**{outline:1px solid red ;} */
 :root {
 
@@ -10,6 +15,7 @@
 
 body{
     background-image: url(./media/fotos/fondos.png);
+    /* display: block; */
 }
 /*navbar*/
 .logo a {
@@ -197,6 +203,9 @@ footer{
 
 
 @media screen and (max-width: 768px) {
+    body{
+        padding: 0%;
+    }
     .container {
         flex-direction: column;
         padding: 10px;
