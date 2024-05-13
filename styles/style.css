@@ -1,478 +1,258 @@
 
+/**{outline:1px solid red ;} */
+:root {
 
+    --bg-color: #0c0c0d;
+    --text-color: #fff;
+    --main-color: #53c59f;
 
-/* font-family: 'Roboto', sans-serif;
-    font-family: 'Edu TAS Beginner', cursive;
-    font-family: 'Roboto', sans-serif;
-*/
-:root{
-    --colorCoco: rgb(20, 129, 20);
-    --backCoco:rgb(106, 172, 106);
-    --backanuncio:rgba(151, 206, 151, 0.541);
 }
 
-*{
-    margin: 0%;
-    padding: 0%;
-    box-sizing: border-box;
+body{
+    background-image: url(./media/fotos/fondos.png);
+}
+/*navbar*/
+.logo a {
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fcfcfc;
+}
+.navbar {
+    background-color: #000000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+.nav-items ul {
     list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-items ul li {
+    margin-right: 20px;
+}
+
+.nav-items ul li a {
     text-decoration: none;
-    font-family: 'Roboto', sans-serif;
-    
-    /* h1,h2,h3{ */
-        /* width: 60px;
-    /* background-color: rgb(2, 2, 2); */
-    /* outline: 1px solid red; */
-
-    
-
-
-    height: 60px; 
-    /* font-family: 'Roboto', sans-serif; */
-    /* font-weight: 600; */
+    color: #fefefe;
+    transition: color 0.3s ease;
 }
 
-.logo img{
-    width: 60px;
-    height: 60px;
+.nav-items ul li a:hover {
+    color: #2bf267;
 }
 
-/* Presentacion */
-.section-presentacion{
-    margin: auto;
-    max-width: 1200px;
-    /* background-color: aqua; */
-} 
-.presentacion{
-    display: flex;
-    align-items: center;
-    width: 1200px;
-    margin: 25px auto;
-    padding: 20px;
-    /* background-color: aquamarine; */
-}
-.nombre{
-    display: flex;
-    flex-direction: column;
-    width: 500px;
-    height: 200px;
-    text-align: center;
-    /* background-color: rgb(117, 112, 112); */
-}
-.nombre span{
-    color: var(--colorCoco);
-    font-size: 20px;
-    font-weight: 200;
-}
-.nombre h1 {
-    /* font-family: 'Edu TAS Beginner', cursive; */
-    margin-top: 35px;
-    font-size: 70px;
-    font-weight: 500;
-}
-.nombre .letra{
-    /* font-family: 'Edu TAS Beginner', cursive; */
-    margin-top: 35px;
-    font-size: 70px;
-    font-weight: 500;
-    color: var(--colorCoco);
-}
-
-.imagen{
-    margin: auto;
-}
-.imagen img{
-    max-width: max-content;
-}
-
-
-/* Trio productos */
-.trio{
-    width: 750px;
-    height: 600px;
-    position: relative;
-    margin: 100px auto;
-    border-radius: 20px;
-
-}
-.trio::before{
-    content: "";
-    position: absolute;
-    left: 0%;
-    right: 0%;
-    top: 0%;
-    bottom: -17%;
-    width: auto;
-    height: auto;
-    /* background-color: rgba(0, 0, 0, 0.400); */
-    z-index: 99;
-    border-radius: 20px;
-}
-
-.trio_ajustes{
-    width: 750px;
-    height: 600px;
-    margin: auto;
-    display: flex;
-    border-radius: 20px;
-}   
-.ajuste_1{
-    width: 400px;
-    height: 600px;
-    position: relative;
-    border-right: 5px solid rgb(252, 252, 252);
-}
-.ajuste_1 img{
-    width: 400px;
-    height: 600px;
-    object-fit: cover;
-    border-radius: 20px 0px 0px 20px;
-    border-right: 5px solid rgb(255, 255, 255);
-  
-}
-.ajuste_1 h2{
-    position: absolute;
-    bottom: 10px;
-    left: 165px;
-    z-index: 1000;
-    color: var(--colorCoco);
-
-
-    font-size: 38px;
-    font-weight: 500;
-
-     
-}
-
-
-.grupo{
-    width: 350px;
-    height: 600px;
-    /* background-color: rgb(225, 34, 34); */
-    position: relative;
-}
-.grupo1, .grupo2{
-    width: 350px;
-    height: 300px;
-    /* background-color: brown; */
-    border-radius: 20px;
-
-}
-.grupo1 img{
-    width: 350px;
-    height: 300px;
-    object-fit: cover;  
-    border-radius: 0px 20px 0 0px; 
-     border-bottom: 5px solid rgb(255, 255, 255); 
-}
-
-.grupo2 img{
-    width:350px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 0px 0px 20px 0px;  
-}
-
-.grupo1 h2{
-    position: absolute;
-    bottom: 310px;
-    left: 120px;
-    z-index: 1000;
-    color: var(--colorCoco);
-
-
-    font-size: 38px;
-    font-weight: 500;
-     
-}
-.grupo2 h2{
-    position: absolute;
-    bottom: 20px;
-    left: 80px;
-    z-index: 1000;
-    color: var(--colorCoco);
-
-
-    font-size: 40px;
-     font-weight: 500;
-     
-    /* text-shadow: 0px 0px 10px black; */
-}
-
-/* anuncios */
-.anuncios{
-    background-color: var(--backanuncio);
-    margin-bottom: 60px;
-}
-.trio__anuncio{
-    display: flex;
-    width: 1200px;
-    margin: auto;
-    
-}
-.envios ,
-.cambios,
-.calidad{
-   
-    display: flex;
-    align-items: center;
-    width: 400px;
-    padding: 10px;
-    margin: 10px;
-}
-.envios i ,
-.cambios i,
-.calidad i{
-    font-size: 60px;
-    padding: 20px;
-}
-
-.envios p ,
-.cambios p,
-.calidad p{
-    width: 250px;
-    padding: 10px;
-    font-family: 'Roboto', sans-serif;
-    
-}
-
-/* destacados */
-
-/* Slider 2 */
-.productos{
-    margin-top: 200px;
-    margin-bottom: 200px;
-}
-
-.productos__title{
-    width: 100%;
-    height: 50px;
-    margin: 10px 0;
-    text-align: center;
-
-}
-.productos__title .title{
-    font-family: 'Roboto', sans-serif;
-    font-size: 38px;
-    font-weight: 400;
-     
-    color: var(--backCoco);
-}
-
-.swiper-wrapper{
-    display: flex;
-}
-
-
-.card{
-
-    width: 300px;
-    height: auto;
-    background-color: #f6f6f6;
-
-    margin: 45px;
-    border-radius: 30px;
-}
-.card__img{
-    width: 100%;
-    height: 300px;
-
-}
-.card__img img{
-    width: 100%;
-    height: 100%;
-    border-radius: 25px 25px 0 0;
-    object-fit:cover;
-}
-
-.card__contenido{
-    text-align: center;
-    margin: auto;
-}
-.card__contenido h2{
-    text-align: center;
-    padding: 5px;
-    color: black;
-    font-weight: 500;
-}
-/* 
-.card__contenido p{
-    text-align: center;
-    font-size: 14px;
-    width: 200px;
-    font-weight: 100;
-} */
-
-.card__contenido .contenido__btn1{
-    display: block;
-    width: 150px;
-    height: 40px;
-
-    padding: 10px;
-    margin: 20px auto;
-    text-align: center;
-
-    color: var(--colorCoco);
-    background-color: var(--backCoco);
-    
-    border-radius: 30px;
-    /* border: 1px solid rgba(0, 0, 0, 0.338); */
-    text-decoration: none;
-}
-.contenido__btn1{
-    text-align: center;
-}
-.contenido__btn1:hover{
-    background-color: transparent;
-    border: 1px solid var(--colorCoco);
-}
-
-.swiper .swiper-button-prev, .swiper .swiper-button-next{
-    color: var(--colorCoco);
-}
-
-
-.cards-tabs{
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    text-align: center;
-    margin: auto;
-}
-.card-tab{
-    margin:20px  auto;
-
-}
-.card-tab img{
-    object-fit: cover;
-}
-
-/* form */
-
-/* Formulario de contacto */
-.formulario_contacto{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-}
-.formulario_contacto form{
-    /* display: flex; */
-    padding: 50px 55px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    border-radius: 20px;
-    text-align: center;
-    width: 400px;
-    margin: 50px 0;
-    background-image: url("../Slider pri/gi.jpeg");
-    object-fit: cover;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-.input-form{
-    display: flex;
-    flex-direction: column;
-
-}
-.formulario_contacto h2{
-    color: #283629;
-    font-size: 35px;
-    margin: 10px 0;
-    align-items: center;
-}
-
-label{
-    color: rgb(34, 199, 95);
-    font-size: 15px;
-    font-weight: 600;
-    margin-bottom: 15px;
-}
-
-input, textarea{
-    padding: 17px 25px;
-    border-radius: 25px;
-    margin-bottom: 20px;
-    background-color: #fbfbfb45;
-    border: 2px solid  #f0faf1;
-    color: #283629;
-
-    outline: none;
-}
-input::placeholder, textarea::placeholder{
-    color: #54a758;
-}
-
-.form-text{
-    margin-bottom: 30px;
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-
-}
-
-.form-text a{
-    color: #76b280;
-    font-size: 14px;
-    font-weight: 600;
-    text-decoration: none;
-}
-
-.btn, .btn-eliminar, .btn-actualizar{
-    font-size: 16px;
-    color: #000000;
-    border: 0;
-    border-radius: #37dc60;
-    box-shadow: 0 0 20px rgba(0, 254, 51, 0.29);
+.menu-toggle {
+    display: none;
+    font-size: 24px;
     cursor: pointer;
 }
+/* HOMEPAGE */
 
-.btn:hover, .btn-eliminar:hover, .btn-actualizar:hover {
-    background-color: #4be05f;
-}
-
-
-
-
-
-/* Footer */
-.footer-links {
-    width: 25%;
-    padding: 0 15px;
-}
-
-.footer-links a{
-font-size: 18px;
-text-decoration: none;
-color: #BBBBBB;
-display: block;
-margin-bottom: 15px;
-transition: all .3s ease;
-
-}
-.footer-links a:hover {
-    color: #ffff;
-    /* padding-left: 6px; */
-}
-
-.social-link a {
-    display: inline-block;
-    min-height: 40px;
-    width: 40px;
-    background-color: rgba(255, 255, 255, 0.2);
-    margin: 0 10px 10px 0;
+/*informacion*/
+.header-content{
+    display: flex; 
+    padding: 50px 0 70px 0;
     text-align: center;
-    line-height: 40px;
-    border-radius: 50%;
-    color: #1db36d;
-    outline: 1px solid #1db36d;
-    transition: all .5s ease;
+    background-color: rgb(255, 255, 255);
+    margin-top: 100px;
+    border-radius: 10px;
+    border: 1px solid rgb(227, 226, 226);
+    margin: 30px;
+} 
+
+.header-txt{
+    width: 40%;
+    margin:0% auto
 }
-.social-link a:hover {
-    background-color: #1db36d;
+
+.header-txt h1{ 
+    font-size: 350%;
+    line-height: 70px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 25px;
 }
-@media(max-width:991px) {
-    .footer-links {
+
+.header-txt p{
+    font-size: 150%;
+    color: #000000;
+}
+.imagenes{
+    margin: 0 auto;
+    box-sizing: content-box;
+}
+
+
+.botones{
+    display: flex;
+    margin-top: 50px;
+}
+
+.btn-1,
+.btn-2{
+    display: inline-block;
+    background:linear-gradient(90deg, #7eea99 0%, #53c59f 100%);
+    padding: 10px 35px;
+    margin-right: 20px;
+    color: #000000;
+    border-radius: 25px;
+
+}
+.btn-2{
+    background: none;
+    border: 1px solid #53c59f;
+}
+
+.btn-1:hover{
+    background:linear-gradient(90deg, #53c59f 0%, #53c59f 100%);
+}
+.btn-2:hover{
+    background-color: #53c59f;
+    border: 1px solid #53c59f;
+}
+
+img{
+    border-radius:5px;
+}
+/*pasos registro*/
+.paso{
+    background-color: rgb(255, 255, 255);
+    margin-bottom: 50px;
+    padding: 40px;
+    border-radius: 40px;
+    border: 1px solid rgb(227, 226, 226);
+    height: 40%;
+    width: 70%;
+}
+.pasos{
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 150%;
+    margin: 0 auto;
+    text-align: center;
+
+}
+.npasos{
+    margin-bottom: 30px;
+    display: inline-block;
+    background-color: rgba(7, 211, 31, 0.32);
+    padding: 10px 25px 10px 25px;
+    border-radius: 50px;
+}
+.ipasos{
+    text-align: center;
+}
+.pasos{
+    width: 100%;
+    height: 100%;
+}
+/*preguntas frecuentes*/
+ .preguntas{
+    background-color: white;
+    margin-bottom: 150px;
+ }
+ .titulop{
+    text-align: center;
+ }
+ .pregunta {
+    cursor: pointer;
+    font-weight: bold;
+    border: 1px solid black;
+    margin: 40px 30px 0 30px;
+    
+    padding: 10px;
+}
+.respuesta {
+    display: none;
+    margin-bottom: 20px;
+    background-color: #000000;
+    border-color: white;
+    color: white;
+    border: 2px solid black;
+    margin: 0 30px 0 30px;
+    padding: 10px 10px 10px 10px;
+}
+/*footer*/
+footer{
+    background-color: #ffffff;
+}
+
+/*NOSOTROS*/
+.nosotros{
+    background-color: white;
+    text-align: center;
+    margin: 30px 30px 30px 30px;
+    border-radius: 9px;
+}
+.surgio{
+    background-color: white;
+    text-align: center;
+    margin: 30px 30px 30px 30px;
+    border-radius: 9px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-items {
+        display: none;
         width: 100%;
-        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .nav-items.active {
+        display: block;
+    }
+
+    .nav-items ul {
+        flex-direction: column;
+    }
+
+    .nav-items ul li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    .imagen{
+        width: 200px;
+    }
+    .header-content{
+        flex-direction: column-reverse;
+        margin: 10px 10px 10px 10px;
+    }
+    .header-txt{
+        width: 100%;
+        margin: 0px auto;
+        padding: 10px;
+    }
+    .textop{
+        font-size: 50%;
+    }
+    .desplazar{
+        display: none;
+    }
+    .botones{
+        text-align: center;
+        font-size: 100%;
+    }
+    .nose{
+        font-size: 70%;
+    }
+    .nose h1{
+        font-size: 300%;
+    }
+    .paso{
+        border-radius: 9px;
     }
 }
