@@ -1,10 +1,3 @@
-*{
-    padding: 0%;
-    margin: 0%;
-    box-sizing: border-box;
-    text-decoration: none;
-}
-/**{outline:1px solid red ;} */
 :root {
 
     --bg-color: #0c0c0d;
@@ -14,10 +7,10 @@
 }
 
 body{
+    font-family: Arial, Helvetica, sans-serif;
     background-image: url(./media/fotos/fondos.png);
-    /* display: block; */
 }
-/*navbar*/
+/* /navbar/ */
 .logo a {
     text-decoration: none;
     font-size: 24px;
@@ -58,7 +51,7 @@ body{
 }
 /* HOMEPAGE */
 
-/*informacion*/
+/* /informacion/ */
 .header-content{
     display: flex; 
     padding: 50px 0 70px 0;
@@ -81,6 +74,8 @@ body{
     font-weight: 700;
     color: #000000;
     margin-bottom: 25px;
+    font-family: "Poetsen One", sans-serif;
+    font-style: normal;
 }
 
 .header-txt p{
@@ -90,6 +85,17 @@ body{
 .imagenes{
     margin: 0 auto;
     box-sizing: content-box;
+    width: 300px;
+    height: 300px; 
+    overflow: hidden; 
+    border-radius: 5px;
+}
+.imagenes img{
+    width: auto;
+    height: auto; 
+    max-width: 100%;
+    max-height: 100%; 
+    object-fit: contain;
 }
 
 
@@ -101,7 +107,7 @@ body{
 .btn-1,
 .btn-2{
     display: inline-block;
-    background:linear-gradient(90deg, #7eea99 0%, #53c59f 100%);
+    background-color: #96ED89;
     padding: 10px 35px;
     margin-right: 20px;
     color: #000000;
@@ -110,26 +116,23 @@ body{
 }
 .btn-2{
     background: none;
-    border: 1px solid #53c59f;
+    border: 1px solid #96ED89;
 }
 
 .btn-1:hover{
-    background:linear-gradient(90deg, #53c59f 0%, #53c59f 100%);
+    background-color: #96ED89;
 }
 .btn-2:hover{
-    background-color: #53c59f;
-    border: 1px solid #53c59f;
+    background-color: #96ED89;
+    border: 1px solid #96ED89;
 }
 
-img{
-    border-radius:5px;
-}
-/*pasos registro*/
+/* /pasos registro/ */
 .paso{
     background-color: rgb(255, 255, 255);
     margin-bottom: 50px;
     padding: 40px;
-    border-radius: 40px;
+    border-radius: 5px;
     border: 1px solid rgb(227, 226, 226);
     height: 40%;
     width: 70%;
@@ -143,6 +146,9 @@ img{
 
 }
 .npasos{
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     margin-bottom: 30px;
     display: inline-block;
     background-color: rgba(7, 211, 31, 0.32);
@@ -156,7 +162,8 @@ img{
     width: 100%;
     height: 100%;
 }
-/*preguntas frecuentes*/
+/* /preguntas frecuentes/ */
+
  .preguntas{
     background-color: white;
     margin-bottom: 150px;
@@ -168,9 +175,9 @@ img{
     cursor: pointer;
     font-weight: bold;
     border: 1px solid black;
-    margin: 40px 30px 0 30px;
-    
-    padding: 10px;
+    margin: 0 30px 0 30px;
+    margin-top: 40px;
+    padding: 10px 10px 10px 10px;
 }
 .respuesta {
     display: none;
@@ -182,12 +189,12 @@ img{
     margin: 0 30px 0 30px;
     padding: 10px 10px 10px 10px;
 }
-/*footer*/
+/* /footer/ */
 footer{
     background-color: #ffffff;
 }
 
-/*NOSOTROS*/
+/* /NOSOTROS/ */
 .nosotros{
     background-color: white;
     text-align: center;
@@ -200,12 +207,63 @@ footer{
     margin: 30px 30px 30px 30px;
     border-radius: 9px;
 }
+/* /Mascota/ */
 
+.buscador{
+    margin:30px auto;
+    background-color: #ffffff;
+    width: 400px;
+    height: 150px;
+    text-align: center;
+    padding-top: 40px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 20px green;
+}
+.buscador button{
+    border-radius: 5px;
+    background-color: #2bf267;
+}
+.mascotacard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.animal{
+    width: 400px;
+    height: 900px;
+    background-color: rgb(249, 249, 249);
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 1px 1px 20px green;
+}
+.animal h2{
+    font-family: "Poetsen One", sans-serif;
+}
+hr{
+    width: 60%;
+    margin: auto;
+    margin-bottom: 5px;
+}
+
+.ianimal{
+    width: 250px;
+    height:250px;
+    overflow: hidden; 
+    box-sizing: content-box;
+    border-radius: 50%;
+    margin:5px auto;
+}
+.ianimal img{
+    width: auto;
+    height: auto; 
+    max-width: max-content;
+    max-height: 100%; 
+    object-fit: contain;
+    filter: drop-shadow(1px 1px 20px green);
+}
 
 @media screen and (max-width: 768px) {
-    body{
-        padding: 0%;
-    }
     .container {
         flex-direction: column;
         padding: 10px;
@@ -235,7 +293,7 @@ footer{
     }
     .imagen{
         width: 200px;
-    }
+    } 
     .header-content{
         flex-direction: column-reverse;
         margin: 10px 10px 10px 10px;
@@ -261,7 +319,10 @@ footer{
     .nose h1{
         font-size: 300%;
     }
-    .paso{
-        border-radius: 9px;
+    .buscador{
+        width: 350px;
+    }
+    .mascotacard{
+        width: 350px;
     }
 }

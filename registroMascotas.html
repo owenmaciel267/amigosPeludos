@@ -1,136 +1,84 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./media/logo/169b21ec-1dc6-4e95-96d6-8722f994526d.jpg" type="image/x-icon">
     <link rel="stylesheet" href="./styles/resgistroMascota.css"> 
-    <link rel="stylesheet" href="./styles/style.css">
-    <script src="./js.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <link
-    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
-    <link rel="stylesheet"
-    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
     <title>Registro de Mascotas</title>
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-          <div class="container">
-              <div class="logo">
-                  <a href="./index.html"> <img src="./media/logo/169b21ec-1dc6-4e95-96d6-8722f994526d.jpg" width="25px" height="25px">PetControl</a>
-              </div>
-              <div class="menu-toggle">&#9776;</div>
-              <div class="nav-items">
-                  <ul>
-                      <li><a href="./index.html">Inicio</a></li>
-                      <li><a href="./mascotas.html">mis mascotas</a></li>
-                      <li><a href="./nosotros.html">Nosotros</a></li>
-                      <li><a href="#">Galería</a></li>
-                      <li><a href="./registrar.html">Registrar</a></li>
-                  </ul>
-              </div>
-          </div>
-      </nav>
-    </header> 
+    
 
 <!-- ___________________________________________________________ -->
  <!-- form -->
-    <section class="registroMascota" id="registroMascota">
-        <form action="mascotas.php" method="POST" enctype="multipart/form-data">
-            <h2>
-                Registra tu Mascotas
-            </h2>
-            <div class="input-form">
-                <label for="tipo" class="label">Tipo</label>
-                <select id="tipo" name="tipo" class="input">
-                    <option value="perro" class="input">perro</option>
-                    <option value="gato" class="input">gato</option>
-                </select>
+ <section class="registroMascota" id="registroMascota">
+    <form action="mascotas.php" method="POST" enctype="multipart/form-data">
+        <h2>
+            Registra tu Mascotas
+        </h2>
+        <div class="input-form">
+            <label for="tipo" class="label">Tipo</label>
+            <select id="tipo" name="tipo" class="input">
+                <option value="perro" class="input">perro</option>
+                <option value="gato" class="input">gato</option>
+            </select>
 
-                <label for="nombre" class="label"> Nombre</label>
-                <input type="texto" class="input" name="Nombre" id="Nombre" placeholder="Nombre">
+            <label for="nombre" class="label"> Nombre</label>
+            <input type="texto" class="input" name="nombre" id="nombre" placeholder="Nombre">
 
-                <label for="sexo" class="label">Sexo</label>
-                <select id="sexo" name="sexo" class="input">
-                    <option value="macho" class="input">Macho</option>
-                    <option value="hembra" class="input">Hembra</option>
-                </select>
+            <label for="sexo" class="label">Sexo</label>
+            <select id="sexo" name="sexo" class="input">
+                <option value="macho" class="input">Macho</option>
+                <option value="hembra" class="input">Hembra</option>
+            </select>
 
-                <label for="fechaNacimiento" class="label"> Fecha de Nacimiento</label>
-                <input type="date" class="input" name="fechaNacimiento" id="fechaNacimiento" placeholder="fecha de nacimiento">
+            <label for="fecha" class="label"> Fecha de Nacimiento</label>
+            <input type="date" class="input" name="fecha" id="fecha" placeholder="fecha de nacimiento">
 
 
-                <label for="raza" class="label">Raza</label>
-                <input type="raza" class="input" name="raza" id="raza" placeholder="Raza">
+            <label for="raza" class="label">Raza</label>
+            <input type="raza" class="input" name="raza" id="raza" placeholder="Raza">
 
-                <label for="tamaño" class="label">Tamaño</label>
-                <select id="tamaño" name="tamaño" class="input">
-                    <option value="pequeño" class="input">Pequeño</option>
-                    <option value="mediano" class="input">Mediano</option>
-                    <option value="grande" class="input">Grande</option>
-                </select>
-            
-                
-                <label for="color" class="label">Color</label>
-                <select id="color" name="color" class="input">
-                    <option value="negro" class="input">Negro</option>
-                    <option value="blanco" class="input">Blanco</option>
-                    <option value="marrón" class="input">Marrón</option>
-                    <option value="gris" class="input">Gris</option>
-                    <option value="rojo" class="input">Rojo</option>
-                    <option value="amarillo" class="input">Amarillo</option>
-                    <option value="azul" class="input">Azul</option>
-                    <option value="verde" class="input">Verde</option>
-                </select>
+            <label for="tamaño" class="label">Tamaño</label>
+            <select id="tamaño" name="tamaño" class="input">
+                <option value="pequeño" class="input">Pequeño</option>
+                <option value="mediano" class="input">Mediano</option>
+                <option value="grande" class="input">Grande</option>
+            </select>
         
-                
-                <label for="trama" class="label">Trama</label>
-                <select id="trama" name="trama" class="input">
-                    <option value="rayas" class="input">Rayas</option>
-                    <option value="manchas" class="input">Manchas</option>
-                    <option value="lisos" class="input">Lisos</option>
-                    <option value="escamas" class="input">Escamas</option>
-                    <option value="plumas" class="input">Plumas</option>
-                </select>
-
-
-                <label for="foto" class="label">Foto Mascota</label>
-                <input type="file" class="input" name="foto" id="foto" placeholder="foto">
             
-                <div class="form-text">
-                    <a href="#">Politica de privacidad</a>
-                    <a href="#">Terminos y Condiciones</a>
-                </div>
+            <label for="color" class="label">Color</label>
+            <select id="color" name="color" class="input">
+                <option value="negro" class="input">Negro</option>
+                <option value="blanco" class="input">Blanco</option>
+                <option value="marrón" class="input">Marrón</option>
 
-                <input type="submit" name="create" value="Enviar" class="btnForm">
+            </select>
+    
+            
+            <label for="trama" class="label">Trama</label>
+            <select id="trama" name="trama" class="input">
+                <option value="rayas" class="input">Rayas</option>
+                <option value="manchas" class="input">Manchas</option>
+                <option value="lisos" class="input">Lisos</option>
+ 
+            </select>
+
+
+            <label for="foto" class="label">Foto Mascota</label>
+            <input type="file" class="input" name="foto" id="foto" accept="image/*">
+        
+            <div class="form-text">
+                <a href="#">Politica de privacidad</a>
+                <a href="#">Terminos y Condiciones</a>
+            </div>
+
+            <input type="submit" name="create" value="Enviar" class="btn">
 
 
             </div>
         </form>
     </section>
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-          <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-            <p class="col-md-4 mb-0 text-body-secondary">© 2024 Yo y los dominados</p>
-        
-            <a href="./index.html" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-              <img src="./media/logo/169b21ec-1dc6-4e95-96d6-8722f994526d.jpg" width="40px" height="40px">
-            </a>
-            <ul class="nav col-md-4 justify-content-end">
-              <li class="nav-item"><a href="./index.html" class="nav-link px-2 text-body-secondary">Inicio</a></li>
-              <li class="nav-item"><a href="./mascotas.html" class="nav-link px-2 text-body-secondary">Mis Mascotas</a></li>
-              <li class="nav-item"><a href="./nosotros.html" class="nav-link px-2 text-body-secondary">Nosotros</a></li>
-              <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Galeria</a></li>
-              <li class="nav-item"><a href="./registrar.html" class="nav-link px-2 text-body-secondary">Registrar</a></li>
-            </ul>
-          </footer>
-        </div>
-      </footer>
 </body>
 </html>

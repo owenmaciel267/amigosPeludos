@@ -1,0 +1,54 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+/*navbar*/
+.logo a {
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fcfcfc;
+}
+.navbar {
+    background-color: #000000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+.nav-items ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-items ul li {
+    margin-right: 20px;
+}
+
+.nav-items ul li a {
+    text-decoration: none;
+    color: #fefefe;
+    transition: color 0.3s ease;
+}
+
+.nav-items ul li a:hover {
+    color: #2bf267;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.buscador{
+    background-color: #2bf267;
+    width: 500px;
+    height: 100px;
+    margin: 20px auto;
+    text-align: center;
+}
