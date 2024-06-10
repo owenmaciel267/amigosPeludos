@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>PetRescue</title>
+      <link rel="icon" href="./media/logo/169b21ec-1dc6-4e95-96d6-8722f994526d.jpg">
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+      <!-- Bootstrap CSS v5.2.1 -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+        <link rel="stylesheet" href="cita.css">
+        <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+        <link rel="stylesheet"
+        href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    </head>
+<body>
+    <header>
+        <nav class="navbar">
+          <div class="container">
+              <div class="logo">
+                  <a href="/index.html"> <img src="/media/logo/169b21ec-1dc6-4e95-96d6-8722f994526d.jpg" width="25px" height="25px">PetControl</a>
+              </div>
+              <div class="menu-toggle">&#9776;</div>
+              <div class="nav-items">
+                  <ul>
+                      <li><a href="/index.html">INICIO</a></li>
+                      <li><a href="/mascotas.html">MIS MASCOTAS</a></li>
+                      <li><a href="/nosotros.html">NOSOTROS</a></li>
+                      <li><a href="/veterinarios.html">VETERINARIO</a></li>
+                      <li><a href="/registroUsuarios.html">REGISTRAR</a></li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+      </header>
+    <form action="https://formsubmit.co/dndev267@gmail.com" method="POST" class="citaf">
+        <h2>
+            Cita con: Jaria Mose
+        </h2>
+        <div class="input-form">
+            <label for="idmascota"> Id de la mascota</label>
+            <input type="number" name="idmascota" id="idmascota" placeholder="Id Mascota"> 
+            <label for="dia">Dia</label>
+            <input type="datetime-local" name="dia" id="dia" placeholder="dia">
+            <label for="menssage">
+                mensaje
+            </label>
+            <textarea name="message" id="message" cols="30" rows="5" placeholder="Mensaje"></textarea>
+
+
+            <input type="submit" value="Enviar" class="btn">
+
+
+            <!-- Esto lo que hace es dejarnos en nuestra pagina -->
+            <input type="hidden" name="_next" value="http://127.0.0.1:5500/practica-n-22/">
+            <input type="hidden" name="_captcha" value="false">
+        </div>
+    </form>
+    <footer class="footer">
+        <div class="container-footer">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Empresa</h4>
+                    <ul>
+                        <li><a href="#">Sobre nosotros</a></li>
+                        <li><a href="#">Nuestros servicios</a></li>
+                        <li><a href="#">Política de privacidad</a></li>
+                        <li><a href="#">Programa de afiliados</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Obten Ayuda</h4>
+                    <ul>
+                        <li><a href="#">Preguntas frecuentes</a></li>
+                        <li><a href="#">Adopción de mascotas</a></li>
+                        <li><a href="#">Centro de noticias</a></li>
+                        <li><a href="#">Otros tipos de mascotas</a></li>
+                        <li><a href="#">Contáctanos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Redes Sociales</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                        
+                    </div>
+                </div>
+                <div class="footer-col logo-col">
+                  <img src="/media/logo/169b21ec-1dc6-4e95-96d6-8722f994526d.jpg" alt="Logo de la Empresa">
+                  <p>&copy; 2024 PetControl. Todos los derechos son reservados.</p>
+              </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

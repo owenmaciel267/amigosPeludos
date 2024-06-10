@@ -1,0 +1,660 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+/**{outline:1px solid red ;} */
+:root {
+
+    --bg-color: #0c0c0d;
+    --text-color: #fff;
+    --main-color: #53c59f;
+
+}
+
+body{
+    font-family:'Poppins', sans-serif;
+    background-image: url(./media/fotos/fondos.png);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+/*navbar*/
+.logo a {
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fcfcfc;
+}
+.logo img {
+    border-radius: 4px;
+    margin: 3px;
+}
+.navbar {
+    background-color: #222327;
+    color: white;
+}
+
+.nav-items ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-items ul li {
+    margin-right: 20px;
+}
+
+.nav-items ul li a {
+    text-decoration: none;
+    color: #fefefe;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+.nav-items ul li a:hover {
+    color: #2bf267;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    font-weight: 500;
+}
+/* HOMEPAGE */
+
+/*informacion*/
+.header-content{
+    display: flex; 
+    padding: 50px 0 70px 0;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    margin-top: 100px;
+    border-radius: 10px;
+    border: 1px solid rgb(227, 226, 226);
+    margin: 30px;
+} 
+
+.header-txt{
+    width: 40%;
+    margin:0% auto
+}
+
+.header-txt h1{ 
+    font-size: 350%;
+    line-height: 70px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 25px;
+    font-family: "Poetsen One", sans-serif;
+    font-style: normal;
+}
+
+.header-txt p{
+    font-size: 150%;
+    color: #000000;
+}
+.imagenes{
+    margin: 0 auto;
+    box-sizing: content-box;
+    width: 400px;
+    height: 400px; 
+    overflow: hidden; 
+    border-radius: 5px;
+}
+.imagenes img{
+    width: auto;
+    height: auto; 
+    border-radius: 10px;
+    max-width: 100%;
+    max-height: 100%; 
+    object-fit: contain;
+}
+
+
+.botones{
+    display: flex;
+    margin-top: 50px;
+}
+
+
+.btn-1{
+display: inline-block;
+padding: 10px 5px;
+text-decoration: none;
+margin-right: 10px;
+color: #000000;
+border-radius: 30em;
+width: 9em;
+ height: 4em;
+ font-size: 15px;
+ align-items: center;
+ border: 1px solid #96ED89;
+ position: relative;
+ overflow: hidden;
+ z-index: 1;
+ box-shadow: 6px 6px 12px #c5c5c5,
+             -6px -6px 12px #ffffff;
+}
+
+.btn-1::before {
+    content: '';
+    width: 0;
+    height: 4em;
+    border-radius: 30em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to right, #0fd850 0%, #f9f047 100%);
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+   }
+   
+   .btn-1:hover::before {
+    width: 9em;
+   }
+   .btn-1:hover {
+    color: #000;
+   }
+.btn-2{
+    display: inline-block;
+    padding: 10px 5px;
+    margin-right: 10px;
+    color: #000000;
+    border-radius: 30em;
+    width: 9em;
+     height: 4em;
+     font-size: 15px;
+     align-items: center;
+     border: 1px solid #96ED89;
+     position: relative;
+     overflow: hidden;
+     z-index: 1;
+     box-shadow: 6px 6px 12px #c5c5c5,
+                 -6px -6px 12px #ffffff;
+
+}
+.btn-2 {
+    position: relative;
+    display: inline-block;
+    color: #000000;
+    text-decoration: none;
+    background: linear-gradient(to right, #0fd850, #f9f047);
+    border-radius: 30em;
+    overflow: hidden;
+    transition: color 0.5s ease;
+}
+
+.btn-2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: -1;
+    transition: transform 0.5s ease;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+.btn-2:hover::before {
+    transform: scaleX(1);
+}
+
+.btn-2:hover {
+    color: #000;
+}
+
+/*pasos registro*/
+/* slider creado por santi (con ayuda de chat) */
+.slider {
+    position: relative;
+    width: 500%;
+    height: 100%;
+    max-width: 600px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    color: rgb(7, 7, 7);
+    font-size: 2em;
+    padding: 0.5em;
+    cursor: pointer;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover, .next:hover {
+    background-color: transparent;
+}
+
+/* Pasos registro */
+.paso {
+    background-color: rgb(255, 255, 255);
+    margin-bottom: 50px;
+    padding: 40px;
+    border-radius: 5px;
+    border: 1px solid rgb(0, 0, 0);
+    width: 100%;
+}
+
+.pasos {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 40 40 0px;
+    font-size: 100%;
+    font-style: normal;
+    margin: 0px 10px 10px 0px;
+    text-align: center;
+}
+
+.npasos {
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 30px;
+    display: inline-block;
+    background: linear-gradient(#0fd850, #f9f047);
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 50px;
+}
+
+.ipasos {
+    text-align: center;
+}
+
+.imagen {
+    max-width: 100%;
+    border-radius: 10px;
+}
+/*preguntas frecuentes*/
+ .preguntas{
+    background-color: white;
+    margin-bottom: 100px;
+    padding: 5px 0px 30px 0px;
+ }
+ .titulop{
+    text-align: center;
+    font-family: "Poetsen One", sans-serif;
+ }
+ .pregunta {
+    cursor: pointer;
+    font-weight: bold;
+    border: 1px solid black;
+    margin: 0 30px 0 30px;
+    margin-top: 40px;
+    padding: 10px 10px 10px 10px;
+}
+.pregunta:active{
+    background-color: #2bf267;
+}
+
+.respuesta {
+    display: none;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    border-color: white;
+    border: 2px solid black;
+    margin: 0 30px 0 30px;
+    padding: 10px 10px 10px 10px;
+    font-weight: bold;
+}
+
+/*NOSOTROS*/
+.nosotros{
+    background-color: white;
+    text-align: center;
+    margin: 30px 30px 30px 30px;
+    border-radius: 9px;
+}
+.surgio{
+    background-color: white;
+    text-align: center;
+    margin: 30px 30px 30px 30px;
+    border-radius: 9px;
+}
+/*Mascota*/
+
+.buscador{
+    margin:30px auto;
+    background-color: #ffffff;
+    width: 400px;
+    height: 150px;
+    text-align: center;
+    padding-top: 40px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 20px green;
+}
+.buscador button{
+    border-radius: 5px;
+    background-color: #2bf267;
+}
+.mascotacard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.animal{
+    width: 400px;
+    background-color: rgb(249, 249, 249);
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 1px 1px 20px green;
+}
+.animal h2{
+    font-family: "Poetsen One", sans-serif;
+}
+hr{
+    width: 60%;
+    margin: auto;
+    margin-bottom: 5px;
+}
+.ianimal{
+    width: 250px;
+    height:250px;
+    overflow: hidden; 
+    box-sizing: content-box;
+    border-radius: 50%;
+    margin:5px auto;
+    cursor: pointer;
+}
+.ianimal img{
+    width: auto;
+    height: auto; 
+    max-width: 100%;
+    max-height: 100%; 
+    object-fit: contain;
+    filter: drop-shadow(1px 1px 20px green);
+}
+
+
+/*Mascotas*/
+.mascotitas{
+    margin: 30px auto;
+    display: flex;
+    justify-content: space-evenly;
+    flex: 1;
+}
+.botonregistrar{
+    width: 200px;
+    height: 300px;
+    background-color: #ffffff;
+    border: 4px dashed black;
+    border-radius: 30px;
+}
+/*VETERINARIOS*/
+.veterinarios{
+    margin: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom:300px;
+}
+.card {
+    width: 400px;
+    height: 260px;
+    border-radius: 20px;
+    padding: 5px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    background-image: linear-gradient(144deg, #1a6e22, #119522 50%, #57ca2d);
+  }
+  
+  .card__content {
+    background: rgb(5, 6, 45);
+    border-radius: 17px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .card__content .fveterinario {
+    width: 50%;
+    height: 100%;
+    background-color: white;
+    border-radius: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .fveterinario img{
+    height: 100%;
+    width: 100%;
+    border-radius: 17px;
+  }
+
+  .card__content .text-content {
+    width: 50%;
+    color: white;
+    padding: 5px;
+    text-align: center;
+  }
+  .text-content button {
+    padding: 8px 25px;
+    display: block;
+    margin: auto;
+    border-radius: 8px;
+    border: none;
+    background: #00ca4e;
+    color: white;
+    font-weight: 600;
+  }
+  
+  .text-content button:hover {
+    background: #2bf267;
+  }
+  .text-content button a{
+    text-decoration: none;
+    color: white;
+  }
+
+
+
+  /*FOOTER*/
+  .container-footer{
+	max-width: 1170px;
+	margin:auto;
+}
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+ul{
+	list-style: none;
+}
+.footer{
+	background-color: #24262b;
+    padding: 70px 0;
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #53c59f;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #ffffffda;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: #53c59f;
+	padding-left: 8px;
+}
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgb(255, 255, 255);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #53c59f;
+	transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+	color: #ffffff;
+	background-color: #53c59f;
+}
+.logo-col {
+  text-align: center;
+  
+}
+.logo-col img {
+  max-width: 100px;
+  margin-bottom: 10px;
+  border-radius: 30%;
+}
+.logo-col p {
+  font-size: 14px;
+  color: #ffffffda;
+}
+
+/*responsive footer (hecho por santi wachin)*/
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+  }
+  .logo-col {
+    width: 100%;
+  }
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-items {
+        display: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-items.active {
+        display: block;
+    }
+
+    .nav-items ul {
+        flex-direction: column;
+    }
+
+    .nav-items ul li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    .imagen{
+        width: 200px;
+    } 
+    .header-content{
+        flex-direction: column-reverse;
+        margin: 10px 10px 10px 10px;
+    }
+    .header-txt{
+        width: 100%;
+        margin: 0px auto;
+        padding: 10px;
+    }
+    .textop{
+        font-size: 50%;
+    }
+    .botones{
+        text-align: center;
+        font-size: 100%;
+    }
+    .nose{
+        font-size: 70%;
+    }
+    .nose h1{
+        font-size: 300%;
+    }
+    .buscador{
+        width: 350px;
+    }
+    .mascotacard{
+        width: 350px;
+    }
+    footer{
+        margin-top: 50px;
+    }
+    .mascotitas{
+        justify-content: center;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+    .veterinarios{
+        flex-direction: column;
+        margin: 0 auto;
+    }
+    .card{
+        transform: scale(0.8);
+        margin: 20px auto;
+    }
+}

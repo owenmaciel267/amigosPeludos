@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <title>Buscar Mascotas</title>
 </head>
 <body>
@@ -34,19 +35,11 @@
     </header>  
     <main>
         <section>
-            <div class="buscador" style=" margin:30px auto;
-    background-color: #ffffff;
-    width: 400px;
-    height: 150px;
-    text-align: center;
-    padding-top: 40px;
-    border-radius: 5px;
-    box-shadow: 1px 1px 20px black;">
+            <div class="buscador">
                 <p>Ingrese el ID de la mascota encontrada</p>
                 <form action="buscarMascotas.php" method="POST">
                     <input type="text" name="id" placeholder="ID">
-                    <button type="submit" style="border-radius: 5px;
-    background-color: #2bf267;">Buscar <i class="bi bi-search"></i></button>
+                    <button type="submit">Buscar <i class="bi bi-search"></i></button>
                 </form>
             </div>
             <div id="resultados"></div>
@@ -79,29 +72,12 @@ if (!empty($id)) {
 
     // Si ambos resultados no están vacíos, crear la tarjeta combinada
     if ($resultadoMascota && $resultadoDue) {
-        echo '<section class="mascotacard" style="    display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: auto;">';
-        echo '<div class="animal" style="    width: 400px;
-        height: 900px;
-        background-color: rgb(249, 249, 249);
-        text-align: center;
-        border-radius: 20px;
-        box-shadow: 1px 1px 20px black;">';
-        echo '<div class="ianimal" style="  width: 250px;
-        height:250px;
-        box-sizing: content-box;
-        border-radius: 50%;
-        overflow: hidden; 
-        margin:5px auto;">';
-        echo '<img style="    width: auto;
-        height: auto; 
-        max-width: 100%;
-        max-height: 100%; 
-        object-fit: cover;" src="data:image/jpeg;base64,' . base64_encode($resultadoMascota['foto']) . '"  />';
+        echo '<section class="mascotacard">';
+        echo '<div class="animal">';
+        echo '<div class="ianimal">';
+        echo '<img src="data:image/jpeg;base64,' . base64_encode($resultadoMascota['foto']) . '"  />';
         echo '</div>';
-        echo '<h2 class="card-title" style="afont-family: "Poetsen One", sans-serif;">Mascota: ' . $resultadoMascota["nombre"] . '</h2>';
+        echo '<h2 class="card-title">Mascota: ' . $resultadoMascota["nombre"] . '</h2>';
         echo '<hr>';
         echo '<p class="card-text">Tipo: ' . $resultadoMascota["tipo"] . '</p>';
         echo '<hr>';

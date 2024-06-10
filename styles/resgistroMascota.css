@@ -1,4 +1,7 @@
-
+body{
+font-family: Arial, Helvetica, sans-serif;
+background-image: url(/media/fotos/fondos.png);
+}
 .logo a {
     text-decoration: none;
     font-size: 24px;
@@ -38,7 +41,6 @@
     cursor: pointer;
 }
 
-
 .registroMascota{
     margin: 20px auto;
     display: flex;
@@ -47,12 +49,12 @@
 }
 
 form{
-    /* display: flex; */
+    background-color: white;
     padding: 20px 55px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     border-radius: 20px;
     text-align: center;
-    width: 400px;
+    width: 300px;
     margin-top: 100px;
 }
 .input-form{
@@ -102,7 +104,7 @@ input::placeholder, textarea::placeholder{
     text-decoration: none;
 }
 
-.btnForm{
+.btn{
     font-size: 16px;
     color: #000000;
     border: 0;
@@ -111,15 +113,112 @@ input::placeholder, textarea::placeholder{
     cursor: pointer;
 }
 
-.btnForm:hover{
+.btn:hover{
     background-color: #50e04b;
 }
 
+/*FOOTER*/
+.container-footer{
+	max-width: 1170px;
+	margin:auto;
+}
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+ul{
+	list-style: none;
+}
+.footer{
+	background-color: #24262b;
+    padding: 70px 0;
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #53c59f;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #ffffffda;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: #53c59f;
+	padding-left: 8px;
+}
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgb(255, 255, 255);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #53c59f;
+	transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+	color: #ffffff;
+	background-color: #53c59f;
+}
+.logo-col {
+  text-align: center;
+  
+}
+.logo-col img {
+  max-width: 100px;
+  margin-bottom: 10px;
+  border-radius: 30%;
+}
+.logo-col p {
+  font-size: 14px;
+  color: #ffffffda;
+}
 
-@media(max-width:991px){
-    body{
-        padding: 0%;
-    }
+/*responsive footer (hecho por santi wachin)*/
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+  }
+  .logo-col {
+    width: 100%;
+  }
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+  }
+}
+
+@media(max-width:768px){
     .container {
         flex-direction: column;
         padding: 10px;
@@ -146,9 +245,6 @@ input::placeholder, textarea::placeholder{
     .nav-items ul li {
         margin-right: 0;
         margin-bottom: 10px;
-    }
-    body{
-        padding: 30px;
     }
     form{
         padding: 50px 30px;

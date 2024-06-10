@@ -1,0 +1,22 @@
+.card {
+    width: 200px;
+    height: 250px;
+    border-radius: 20px;
+    padding: 5px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    background-image: linear-gradient(144deg, #1a6e22, #119522 50%, #57ca2d);
+    display: flex;
+    position: relative;
+}
+img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+.nombre{
+    position: absolute;
+    background-color: white;
+}
+.nombre h1{
+    padding: 3px;
+}

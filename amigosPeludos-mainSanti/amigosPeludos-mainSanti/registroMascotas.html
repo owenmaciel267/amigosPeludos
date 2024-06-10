@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/resgistroMascota.css"> 
+    <title>Registro de Mascotas</title>
+</head>
+<body>
+    
+
+<!-- ___________________________________________________________ -->
+ <!-- form -->
+ <section class="registroMascota" id="registroMascota">
+    <form action="mascotas.php" method="POST" enctype="multipart/form-data">
+        <h2>
+            Registra tu Mascotas
+        </h2>
+        <div class="input-form">
+            <label for="tipo" class="label">Tipo</label>
+            <select id="tipo" name="tipo" class="input">
+                <option value="perro" class="input">perro</option>
+                <option value="gato" class="input">gato</option>
+            </select>
+
+            <label for="nombre" class="label"> Nombre</label>
+            <input type="texto" class="input" name="nombre" id="nombre" placeholder="Nombre">
+
+            <label for="sexo" class="label">Sexo</label>
+            <select id="sexo" name="sexo" class="input">
+                <option value="macho" class="input">Macho</option>
+                <option value="hembra" class="input">Hembra</option>
+            </select>
+
+            <label for="fecha" class="label"> Fecha de Nacimiento</label>
+            <input type="date" class="input" name="fecha" id="fecha" placeholder="fecha de nacimiento">
+
+
+            <label for="raza" class="label">Raza</label>
+            <input type="raza" class="input" name="raza" id="raza" placeholder="Raza">
+
+            <label for="tamaño" class="label">Tamaño</label>
+            <select id="tamaño" name="tamaño" class="input">
+                <option value="pequeño" class="input">Pequeño</option>
+                <option value="mediano" class="input">Mediano</option>
+                <option value="grande" class="input">Grande</option>
+            </select>
+        
+            
+            <label for="color" class="label">Color</label>
+            <select id="color" name="color" class="input">
+                <option value="negro" class="input">Negro</option>
+                <option value="blanco" class="input">Blanco</option>
+                <option value="marrón" class="input">Marrón</option>
+                <option value="gris" class="input">Gris</option>
+                <option value="rojo" class="input">Rojo</option>
+                <option value="amarillo" class="input">Amarillo</option>
+                <option value="azul" class="input">Azul</option>
+                <option value="verde" class="input">Verde</option>
+            </select>
+    
+            
+            <label for="trama" class="label">Trama</label>
+            <select id="trama" name="trama" class="input">
+                <option value="rayas" class="input">Rayas</option>
+                <option value="manchas" class="input">Manchas</option>
+                <option value="lisos" class="input">Lisos</option>
+                <option value="escamas" class="input">Escamas</option>
+                <option value="plumas" class="input">Plumas</option>
+            </select>
+
+
+            <label for="foto" class="label">Foto Mascota</label>
+            <input type="file" class="input" name="foto" id="foto" accept="image/*">
+        
+            <div class="form-text">
+                <a href="#">Politica de privacidad</a>
+                <a href="#">Terminos y Condiciones</a>
+            </div>
+
+            <input type="submit" name="create" value="Enviar" class="btn">
+
+
+            </div>
+        </form>
+    </section>
+</body>
+</html>

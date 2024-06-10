@@ -1,13 +1,11 @@
 <?php
-  include("./config/config.php");
-
+    include("../config/config.php");
     $ID= "";
     $id_eliminar = "";
     $nuevoNombre = "";
-    $nuevoApellido = "";
-    $nuevoEmail = "";
     $nuevoTelefono = "";
-    $nuevoDireccion = "";
+    $nuevoEmail = "";
+    $nuevoMensaje = "";
     
     // si apreté botón Actualizar
             if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["actualizar"])) {
@@ -17,11 +15,11 @@
                 // $nuevoEmail = $_POST["nuevoEmail"];
                 // $nuevoMensaje = $_POST["nuevoMensaje"];
 
-                $stmt = $conexion->prepare("SELECT * FROM due WHERE ID=?");
+                $stmt = $conexion->prepare("SELECT * FROM pedidos WHERE ID=?");
                 $stmt->bind_param("i", $ID);
                 
                 if ($stmt->execute()) {
-                    $stmt->bind_result($ID, $nuevoNombre, $nuevoApellido, $nuevoEmail, $nuevoTelefono,  $nuevoDireccion);
+                    $stmt->bind_result($ID, $nuevoNombre, $nuevoTelefono, $nuevoEmail, $nuevoMensaje);
                     while ($stmt->fetch()) {
                         // Los datos del usuario se cargarán en los campos del formulario
                     }
@@ -39,15 +37,15 @@
             if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["update"])) {
                 $ID = $_POST["ID"];
                 $nuevoNombre = $_POST["nuevo-Nombre"];
-                $nuevoApellido = $_POST["nuevo-Apellido"];
-                $nuevoEmail = $_POST["nuevo-Email"];
                 $nuevoTelefono = $_POST["nuevo-Telefono"];
-                $nuevoDireccion = $_POST["nuevo-direccion"];
+                $nuevoEmail = $_POST["nuevo-Email"];
+                $nuevoMensaje = $_POST["nuevo-Mensaje"];
+
                    // Validar la entrada
-                   if (!empty($ID) && !empty($nuevoNombre) && !empty($nuevoApellido) && !empty($nuevoEmail)  && !empty($nuevoTelefono)  && !empty($nuevoDireccion)  ) {
+                   if (!empty($ID) && !empty($nuevoNombre) && !empty($nuevoTelefono) && !empty($nuevoEmail)  && !empty($nuevoMensaje)) {
                     // Crear una declaración preparada
-                    $stmt = $conexion->prepare("UPDATE due SET nombre=?, apellido=? ,telefono=?, email=?, direccion=? WHERE ID=?");
-                    $stmt->bind_param("sssisi", $nuevoNombre, $nuevoApellido, $nuevoEmail, $nuevoTelefono, $nuevoDireccion, $ID);
+                    $stmt = $conexion->prepare("UPDATE pedidos SET nombre=?, telefono=?, email=?, mensaje=? WHERE ID=?");
+                    $stmt->bind_param("ssssi", $nuevoNombre, $nuevoTelefono, $nuevoEmail,$nuevoMensaje,$ID);
 
                     // Ejecutar la declaración preparada
                     if ($stmt->execute()) {
@@ -73,7 +71,7 @@
                 // Validar la entrada
                 if (!empty($Id)) {
                     // Crear una declaración preparada
-                    $stmt = $conexion->prepare("DELETE FROM due WHERE ID=?");
+                    $stmt = $conexion->prepare("DELETE FROM pedidos WHERE ID=?");
                     $stmt->bind_param("i", $Id);
             
                     // Ejecutar la declaración preparada
@@ -97,20 +95,39 @@
 ?>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="wIDth=device-wIDth, initial-scale=1.0">
     <!-- Style -->
+    <link rel="stylesheet" href="../css/style.css">
     <!-- favicon -->
     <link rel="shortcut icon" href="../logo/logo11.png" type="image/x-icon">
 
     <!-- Bootstrap 5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     
-    <title>Tabla due</title>
+    <title>Tabla pedidos</title>
 </head>
     <body>
     <nav class="navbar navbar-expand-sm navbar-dark bg-black" style="background-color: #e3f2fd;">
@@ -146,41 +163,37 @@
                 <div class="col">
                     <!-- Formulario para actualizar un usuario -->
                     <h2 class="text-white">Actualizar Usuario</h2>
-                    <form action="duenos.php" method="POST" class="row g-3 mb-3">
+                    <form action="./crud.php" method="POST" class="row g-3 mb-3">
                     <div class="col">
 
-                        <label for="ID" class="form-label text-light bg-dark">ID de Usuario:</label>
-						<input type="number" name="ID" id="ID" class="form-control" value="<?php echo  $ID; ?>"  required readonly>
+                        <label for="ID" class="form-label">ID de Usuario:</label>
+							<input type="number" name="ID" id="ID" class="form-control" value="<?php echo  $ID; ?>"  required readonly>
 
                     </div>
                     <!-- <input type="hidden" name="ID" value="<//?php echo $ID; ?>"> -->
                     <div class="col">
 
-                        <label for="nuevo-Nombre" class="form-label text-light bg-dark">Nuevo Nombre:</label>
+                        <label for="nuevo-Nombre" class="form-label">Nuevo Nombre:</label>
 						<input type="text" name="nuevo-Nombre" id="nuevo-Nombre" class="form-control" value="<?php echo  $nuevoNombre; ?>"  required >
 
                     </div>
                     <div class="col">
-                        <label for="nuevo-Apellido" class="form-label text-light bg-dark">numero Apellido:</label>
-						<input type="text" name="nuevo-Apellido" id="nuevo-Apellido" class="form-control" value="<?php echo  $nuevoApellido; ?>"   required readonly >
+                        <label for="nuevo-Telefono" class="form-label">numero telefono:</label>
+						<input type="number" name="nuevo-Telefono" id="nuevo-Telefono" class="form-control" value="<?php echo  $nuevoTelefono; ?>"  required >
 
                     </div>
                     <div class="col">
 
-                        <label for="nuevo-Email" class="form-label text-light bg-dark">Nuevo email:</label>
+                        
+
+                        <label for="nuevo-Email" class="form-label">Nuevo email:</label>
 						<input type="text" name="nuevo-Email" id="nuevo-Email" class="form-control" value="<?php echo  $nuevoEmail; ?>"  required >
 
                     </div>
                     <div class="col">
 
-                        <label for="nuevo-Telefono" class="form-label text-light bg-dark">Nuevo Telefono:</label>
-						<input type="text" name="nuevo-Telefono" id="nuevo-Telefono" class="form-control" value="<?php echo  $nuevoTelefono; ?>"  required >
-
-                    </div>
-                    <div class="col">
-
-                        <label for="nuevo-direccion" class="form-label text-light bg-dark">Nuevo Direccion:</label>
-						<input type="text" name="nuevo-direccion" id="nuevo-direccion" class="form-control" value="<?php echo  $nuevoDireccion; ?>"  required >
+                        <label for="nuevo-Mensaje" class="form-label">Nuevo Mensaje:</label>
+						<input type="text" name="nuevo-Mensaje" id="nuevo-Mensaje" class="form-control" value="<?php echo  $nuevoMensaje; ?>"  required >
 
                     </div>
                     
@@ -195,9 +208,9 @@
 				<div class="col">
 					<!-- Formulario para eliminar un usuario -->
 					<h2 class="text-white">Eliminar Usuario</h2>
-					<form action="duenos.php" method="POST" class="row g-3 mb-3">
+					<form action="crud.php" method="post" class="row g-3 mb-3">
 						<div class="col">
-							<label for="id_eliminar" class="form-label text-light bg-dark">ID de Usuario:</label>
+							<label for="id_eliminar" class="form-label">ID de Usuario:</label>
 							<input type="number" name="id_eliminar" id="id_eliminar" class="form-control" value="<?php echo  $id_eliminar; ?>"  required readonly>
 						</div>
 							<input type="submit" name="delete" value="delete" class="btn-actualizar">
@@ -209,13 +222,9 @@
 
 </html>
      
-
-
-
         
 <?php
-     include("./config/config.php");
-
+        include("../config/config.php");
 
             $ID = "";
             $id_eliminar = "";
@@ -228,17 +237,16 @@
         if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["create"])) {
 
             $nombre = $_POST["nombre"];
-            $apellido = $_POST["apellido"];
-            $email = $_POST["email"];
             $telefono = $_POST["telefono"];
-            $direccion = $_POST["direccion"];
+            $email = $_POST["email"];
+            $mensaje = $_POST["mensaje"];
             
             // ValIDar la entrada (puedes agregar más valIDaciones según sea necesario)
             if (!empty($nombre) && filter_var($email, FILTER_VALIDATE_EMAIL)) {
         
                         // Crear una declaración preparada
-                $stmt = $conexion->prepare("INSERT INTO due (nombre, apellido, email, telefono, direccion) VALUES (?, ?, ?, ?, ?)");
-                $stmt->bind_param("sssis", $nombre, $apellido,$email, $telefono, $direccion);
+                $stmt = $conexion->prepare("INSERT INTO pedidos (nombre, telefono, email, mensaje) VALUES (?, ?, ?, ?)");
+                $stmt->bind_param("ssss", $nombre, $telefono, $email, $mensaje );
 
                 // Ejecutar la declaración preparada
                 if ($stmt->execute()) {
@@ -255,7 +263,7 @@
         }
 
         // Leer (Seleccionar)
-        $consulta = "SELECT * FROM due";
+        $consulta = "SELECT * FROM pedidos";
         // $buscador = "WHERE `nombre` LIKE '%put%'";
         $resultado = $conexion->query($consulta);
 
@@ -266,23 +274,21 @@
             echo "<tr>";
                 echo    '<th scope="col">ID</th>';
                 echo    '<th scope="col">nombre</th>';
-                echo    '<th scope="col">apellido</th>';
-                echo    '<th scope="col">email</th>';
                 echo    '<th scope="col">telefono</th>';
-                echo    '<th scope="col">direccion</th>';
-                echo    '<th scope="col">actividad</th>';
+                echo    '<th scope="col">email</th>';
+                echo    '<th scope="col">mensaje</th>';
+                echo    '<th scope="col">activIDad</th>';
             echo "</tr>";
             echo '<tbody>';
                 while ($fila = $resultado->fetch_assoc()) {
                     echo "<tr>";
                     echo   '<td scope="row"> ' . $fila["ID"] . "</td>"; // generalmente no mostramos públicamente el ID
                     echo    "<td> " . $fila["nombre"] . "</td>";
-                    echo    "<td> " . $fila["apellido"] . "</td>";
-                    echo    "<td> " . $fila["email"] . "</td>";
                     echo    "<td> " . $fila["telefono"] . "</td>";
-                    echo    "<td> " . $fila["direccion"] . "</td>";
+                    echo    "<td> " . $fila["email"] . "</td>";
+                    echo    "<td> " . $fila["mensaje"] . "</td>";
                     echo "<td>";
-                        echo '<form action="duenos.php" method="POST">';
+                        echo "<form action='crud.php' method='POST'>";
 
                             echo '<input type="submit" name="actualizar"  class="btn-actualizar" value="actualizar">';  
                             echo '<input type="submit" name="eliminar" value="eliminar" class="mx-3 btn-eliminar">';
